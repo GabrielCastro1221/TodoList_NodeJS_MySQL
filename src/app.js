@@ -8,6 +8,7 @@ const tasksRoutes = require("./routes/tasks");
 const app = express();
 app.set("port", 8080)
 
+app.use(express.static("./public"));
 app.use(myconnection(mysql, {
     host: "localhost",
     user: "root",

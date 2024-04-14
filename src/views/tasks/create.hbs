@@ -1,1 +1,14 @@
-<h1>Create app</h1>
+<div class="container d-block mx-auto my-5 p-5 bg-light border border-secondary rounded text-dark w-50">
+    <h1 class="text-center fw-bold">Crear tarea</h1>
+    <form action="" method="POST" class="mt-2">
+        <div class="mb-4 mt-3">
+            <input type="text" name="task" class="form-control" aria-describedby="tareaHelp"
+                placeholder="Titulo de la tarea">
+        </div>
+        <div class="mb-4">
+            <textarea type="text" name="desc" class="form-control" placeholder="Que tienes que hacer?" cols="30"
+                rows="10"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Agregar tarea</button>
+    </form>
+</div>
