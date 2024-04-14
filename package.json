@@ -1,5 +1,5 @@
 {
-  "name": "todolist-pern_app",
+  "name": "crud",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,13 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.2",
-    "express": "^4.19.2",
-    "express-handlebars": "^7.1.2",
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
     "express-myconnection": "^1.0.4",
-    "mysql": "^2.18.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.0"
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.15"
   }
 }
