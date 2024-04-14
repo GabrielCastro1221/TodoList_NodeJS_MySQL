@@ -3,6 +3,7 @@ const { engine } = require("express-handlebars");
 const myconnection = require("express-myconnection");
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
+const tasksRoutes = require("./routes/tasks");
 
 const app = express();
 app.set("port", 8080)
@@ -24,6 +25,8 @@ app.set("view engine", "hbs");
 app.listen(app.get("port"), () => {
     console.log("Server listening on port", app.get("port"))
 });
+
+app.use("/", tasksRoutes);
 
 app.get("/", (req, res) => {
     res.render("home");
