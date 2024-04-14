@@ -4,34 +4,29 @@
       nueva</a>
     <a href="/" class="w-25 px-3 py-2 bg-red-900 hover:bg-red-800 sm:rounded-lg text-white">Salir</a>
   </div>
-  <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg mt-6">
-    <table class="table-fixed w-full">
-      <thead>
-        <tr class="bg-green-900 text-white">
-          <th class="w-20 py-4 ...">ID</th>
-          <th class="w-1/4 py-4 ...">Titulo</th>
-          <th class="w-1/2 py-4 ...">Descripcion</th>
-          <th class="w-28 py-4 ...">Controles</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each tasks}}
-        <tr>
-          <td class="py-3 px-6">{{id}}</td>
-          <td class="p-3">{{title}}</td>
-          <td class="p-3 text-center">{{description}}</td>
-          <td class="p-3 flex">
-            <form action="/tasks/delete" method="POST" class="mx-2">
-              <input type="hidden" value="{{id}}" name="id">
-              <button class="bg-red-900 hover:bg-red-800 text-white px-3 py-1 sm:rounded-lg " type="submit">
-                <i class="fas fa-trash"></i></button>
-            </form>
+  <div class="bg-white overflow-hidden shadow-xl mt-6 bg-gray-200">
+        <h3 class="text-center text-green-900 uppercase border border-green-800 bg-gray-400 py-2 text-3xl font-bold">Estas son tus Tareas Pendientes </h3>
+      {{#each tasks}}
+      <div class="seccion-tarea mb-8">
+        <div class="flex items-center justify-between gap-6 mt-8 border border-green-900 mx-8 bg-white sm:rounded-lg ">
+          <ul id="lista">
+              <div class="py-4 px-16"> 
+            <li id="elemento">
+              <h4><span class="text-green-900 font-bold">Tarea: </span>{{title}}.</h4>
+              <p class="text-center mt-4"><span class="text-green-900 font-bold">Descripcion: </span>{{description}}.</p>
+              </div>
+            </li>
+          </ul>
+          <form action="/tasks/delete" method="POST" class="mx-2 px-8 flex items-center gap-4">
+            <input type="hidden" value="{{id}}" name="id">
+            <button class="bg-red-900 hover:bg-red-800 text-white px-3 py-1 sm:rounded-lg " type="submit">
+              <i class="fas fa-trash"></i></button>
             <a href="/tasks/edit/{{id}}" class="bg-green-900 hover:bg-green-800 text-white px-3 py-1 sm:rounded-lg ">
               <i class="fas fa-pen"></i></a>
-          </td>
-        </tr>
-        {{/each}}
-      </tbody>
-    </table>
+            </td>
+          </form>
+        </div>
+      </div>
+      {{/each}}
   </div>
 </div>
